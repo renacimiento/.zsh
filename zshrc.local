@@ -1,0 +1,10 @@
+alias gcc='gcc -std=c99 -pedantic -Wall -Wextra'
+alias clang='clang -std=c99 -pedantic -Wall -Wextra'
+
+# Prompt
+function virtual_env_prompt () {
+   REPLY=${VIRTUAL_ENV+(${VIRTUAL_ENV:t}) }
+}
+grml_theme_add_token virtual-env -f virtual_env_prompt '%F{magenta}' '%f'
+grml_theme_add_token space ' '
+zstyle ':prompt:grml:left:setup' items rc virtual-env change-root user space path vcs percent
