@@ -1,6 +1,7 @@
 # Aliases
 alias gcc='gcc -std=c99 -pedantic -Wall -Wextra'
 alias clang='clang -std=c99 -pedantic -Wall -Wextra'
+alias diff='vimdiff -f -R'
 
 # Prompt
 function virtual_env_prompt () {
