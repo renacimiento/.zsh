@@ -3,6 +3,10 @@ alias gcc='gcc -std=c99 -pedantic -Wall -Wextra'
 alias clang='clang -std=c99 -pedantic -Wall -Wextra'
 alias diff='vimdiff -f -R'
 
+# History
+HISTSIZE=8000
+SAVEHIST=16000
+
 # Prompt
 function virtual_env_prompt () {
    REPLY=${VIRTUAL_ENV+(${VIRTUAL_ENV:t}) }
