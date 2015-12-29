@@ -7,6 +7,9 @@ alias diff='vimdiff -f -R'
 HISTSIZE=8000
 SAVEHIST=16000
 
+# less
+export LESS='-Ri'
+
 # Prompt
 function virtual_env_prompt () {
    REPLY=${VIRTUAL_ENV+(${VIRTUAL_ENV:t}) }
