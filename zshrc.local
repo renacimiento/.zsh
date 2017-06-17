@@ -1,22 +1,21 @@
 # Aliases
-alias gcc='gcc -std=c99 -pedantic -Wall -Wextra'
-alias clang='clang -std=c99 -pedantic -Wall -Wextra'
+alias clang='clang -Wall -Wextra -Wpedantic'
 alias diff='vimdiff -f -R'
+alias gcc='gcc -Wall -Wextra -Wpedantic'
+alias grep='grep --color=always'
 
 # History
-HISTSIZE=8000
-SAVEHIST=16000
+HISTSIZE=65536
+SAVEHIST=131072
 
-# less
+# Less
 export LESS='-Ri'
 
 # Prompt
-function virtual_env_prompt () {
-   REPLY=${VIRTUAL_ENV+(${VIRTUAL_ENV:t}) }
-}
-grml_theme_add_token virtual-env -f virtual_env_prompt '%F{magenta}' '%f'
-grml_theme_add_token space ' '
-zstyle ':prompt:grml:left:setup' items rc virtual-env change-root user space path vcs percent
+prompt clint
 
 # Assume xterm supports 256 colors
 [[ -n "$DISPLAY" && "$TERM" == "xterm" ]] && export TERM=xterm-256color
+
+# Disable START/STOP output control, to free up C-s for forward history search
+stty -ixon
